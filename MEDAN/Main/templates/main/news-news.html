@@ -1,0 +1,34 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link href='{% static "css/styles.css"%}' rel="stylesheet" type="text/css">
+    <link href='{% static "css/news-news-styles.css"%}' rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+
+<div class="back-img">
+    <h1>Новости</h1>
+</div>
+<div class="news-news">
+    {% for item in item_list %}
+            <div class="group">
+        <img class="intersect" src='http://127.0.0.1:8000{% static "" %}{{item.img}}'/>
+        <p class="date">{{item.date}}</p>
+        <p class="main-text">
+            {{item.title}}
+        </p>
+        <p class="text">
+            {{item.content}}
+        </p>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+{% endblock %}

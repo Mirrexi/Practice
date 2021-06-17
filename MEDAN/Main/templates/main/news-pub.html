@@ -1,0 +1,49 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link href='{% static "css/styles.css"%}' rel="stylesheet" type="text/css">
+    <link href='{% static "css/news-pub-styles.css"%}' rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="pub" style="display:flex; justify-content:center; width:100%;">
+    <div class="container">
+        <div class="news-pub">
+            <div class="back-img">
+                <h1>Публикации</h1>
+            </div>
+        </div>
+        <div id="publications_content">
+
+            {% for item in item_list %}
+            <div class="publication">
+                <img class="intersect" src='{% static "images/intersect-news-pub.png"%}'/>
+                <div class="flex-box">
+                    <div class="main-part">
+                        <div class="level-one">
+                            <p class="name">{{item.first_name}} {{item.second_name}}</p>
+                            <p class="date">{{item.date}}</p>
+                        </div>
+                        <h2 style="margin-right:auto; height: 10px;">{{item.position}}</h2>
+                    </div>
+                    <div class="main-part">
+                        <p class="main-text">
+                            {{item.title}}
+                        </p>
+                        <p style="word-wrap:break-word;" class="text">
+                            {{item.content}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}

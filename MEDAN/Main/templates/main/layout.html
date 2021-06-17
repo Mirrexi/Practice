@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link href='{% static "css/call.css"%}' rel="stylesheet" type="text/css">
+    <link href='{% static "css/styles.css"%}' rel="stylesheet" type="text/css">
+    <link href='{% static "css/sheets-styles.css"%}' rel="stylesheet" type="text/css">
+
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container">
+    <nav class="main-menu">
+        <div>
+            <img class="main-logo" src='{% static "images/logo.png"%}'>
+        </div>
+        <ul class="top-menu">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/lis">ЛИС</a></li>
+            <li><a href="/history">Компания</a></li>
+            <li><a href="/clients">Клиенты</a></li>
+            <li class="sub-menu"><a href="/news-news">Новости</a>
+                <ul>
+                    <li><a href="/news-news">Новости</a></li>
+                    <li><a href="/news-pub">Публикации</a></li>
+                </ul>
+            </li>
+            <li><a href="/sheets">Статьи</a></li>
+            <li><a href="/ques">Вопросы</a></li>
+            <li><a href="/map">Контакты</a></li>
+        </ul>
+
+        <!-- Button to open the modal login form -->
+<button class="avto-button" onclick="document.getElementById('id01').style.display='block'">Позвонить</button>
+
+<!-- The Modal -->
+<div id="id01" class="modal">
+
+  <!-- Modal Content -->
+  <form action="{% url 'call:submit_call' %}" class="call-form modal-content animate">
+
+    <div style="" class="call-container">
+      <label for="email"><b class="text" style="font-size: 20px">E-mail</b></label>
+      <input class="call-input" type="text" placeholder="Введите ваш E-mail" name="email" required>
+
+      <label for="tel"><b class="text" style="font-size: 20px">Номер телефона</b></label>
+      <input class="call-input" type="tel" id="tel" name="tel"
+       pattern="+7[0-9]{10}" placeholder="Введите ваш номер телефона"  required>
+
+        <label for="name"><b class="text" style="font-size: 20px">Имя</b></label>
+      <input class="call-input" type="text" placeholder="Как к вам обращаться?" name="name" required>
+
+      <button class="call-avto-button" type="submit">Заказать звонок</button>
+    </div>
+
+
+  </form>
+</div>
+        <script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+    </nav>
+</div>
+{% block content %}
+{% endblock %}
+<footer class="footer">
+    <div class="container">
+        <div class="active">
+            <div class="footer-h1">
+                <p class="maintext-footer">Задать вопрос на почту:</p>
+                <p class="maintext-footer-two">Карта сайта</p>
+                <p class="maintext-footer-three">Контакты</p>
+            </div>
+            <div class="footer-form">
+                <div class="form">
+                    <form action="{% url 'reviews:submit_reviews' %}">
+                        <div>
+                            <label for="name">Ваше имя</label>
+                            <input type="text" name="name" required>
+                        </div>
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="comment">Комментарий</label>
+                            <input type="text" name="comment" required>
+                        </div>
+                        <button type="submit" class="footer-button">Отправить</button>
+                    </form>
+                </div>
+                <div class="menu-footer">
+                    <p><a href="/">Главная</a></p>
+                    <p><a href="/lis">ЛИС</a></p>
+                    <p><a href="/history">Компания</a></p>
+                    <p><a href="/clients">Клиенты</a></p>
+                    <p><a href="/news-news">Новости</a></p>
+                    <p><a href="/sheets">Статьи</a></p>
+                    <p><a href="/ques">Вопросы</a></p>
+                    <p><a href="/map">Контакты</a></p>
+                </div>
+                <div class="contacts-footer">
+                    <p>&#43;7(999)999-99-99</p>
+                    <p>Санкт-Петербург, наб.реки Смоленки, д.1</p>
+                    <p>E-mail: info&#64;medan.ru</p>
+                    <p>Пн-Пт 9:00 - 18:00</p>
+                    <div style="flex-direction: row;">
+                    <img class="contact_logo" src='{% static "images/facebook_logo.png"%}'>
+                    <img class="contact_logo" src='{% static "images/youtube_logo.png"%}'>
+                    <img class="contact_logo" src='{% static "images/inst_logo.png"%}'>
+                    <img class="contact_logo" src='{% static "images/twitter_logo.png"%}'>
+                </div>
+                </div>
+            </div>
+
+            <p class="addtext-footer">&#64;2021 All rights reserved</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

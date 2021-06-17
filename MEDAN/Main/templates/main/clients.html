@@ -1,0 +1,94 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link href='{% static "css/styles.css"%}' rel="stylesheet" type="text/css">
+    <link href='{% static "css/clients-styles.css"%}' rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container">
+    <nav></nav>
+</div>
+
+<div class="container">
+    <div class="back-img">
+        <h1>Наши клиенты</h1>
+    </div>
+
+    <div class="clients">
+        <div class="flex-box">
+            <div class="left-column">
+                <div class="text-column-left">
+                    <div class="group-text">
+                        <p class="text-left">Федеральные научные<br/>медицинские центры</p>
+                        <p class="add-text-left">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-left">Многопрофильные<br/>медицинские центры</p>
+                        <p class="add-text-left">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-left">Ведомственные<br/>учреждения</p>
+                        <p class="add-text-left">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-left">Городские<br/>поликлиники</p>
+                        <p class="add-text-left">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-left">Центры переливания<br/>крови</p>
+                        <p class="add-text-left">Подробнее</p>
+                    </div>
+                </div>
+                <div class="column-img">
+                    <img class="img-clients" src='{% static "images/img-left-one.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-left-two.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-left-three.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-left-four.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-left-five.png"%}'/>
+                </div>
+            </div>
+
+            <div class="right-column">
+                <div class="column-img">
+                    <img class="img-clients" src='{% static "images/img-right-one.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-right-two.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-right-three.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-right-four.png"%}'/>
+                    <img class="img-clients" src='{% static "images/img-right-five.png"%}'/>
+                </div>
+                <div class="text-column-right">
+                    <div class="group-text">
+                        <p class="text-right">Распределенные и<br/>региональные системы<br/></p>
+                        <p class="add-text-right">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-right">Частные<br/>медицинские центры<br/></p>
+                        <p class="add-text-right">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-right">Детские лечебные учреждения<br/>и стационары</p>
+                        <p class="add-text-right">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-right">Противотуберкулезные<br/>учреждения<br/></p>
+                        <p class="add-text-right">Подробнее</p>
+                    </div>
+                    <div class="group-text">
+                        <p class="text-right">Центры профилактики и<br/>борьбы со СПИД</p>
+                        <p class="add-text-right">Подробнее</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer></footer>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "main/layout.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link href='{% static "css/styles.css"%}' rel="stylesheet" type="text/css">
+    <link href='{% static "css/sheets-styles.css"%}' rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<div class="container">
+    <div class="back-img">
+        <h1>Экспертные статьи</h1>
+    </div>
+    <div class="sheets">
+        <div class="relative-sheet">
+            {% for item in item_list %}
+            <div class="group-sheet">
+                <div class="main-part">
+                    <h2><a href="/articles/sheets_articles?sheet_id={{item.id}}">{{item.title}}</a></h2>
+                    <p class="date">{{item.date}}</p>
+                </div>
+                <div class="linetext">
+                    <div class="line"></div>
+                    <p class="text">
+                        {{item.description}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
